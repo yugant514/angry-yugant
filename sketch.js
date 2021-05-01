@@ -46,9 +46,10 @@ function setup(){
 }
 
 function draw(){
-   if(backgroundImg){
+  imageMode(CORNER);
+   if(backgroundImg)
        background(backgroundImg)
-   }
+
    else{background(defaultImg)}
     Engine.update(engine);
     //strokeWeight(4);
@@ -70,7 +71,7 @@ function draw(){
     bird.display();
     platform.display();
     //log6.display();
-    slingshot.display();    
+    slingshot.display();
 
 }
 
