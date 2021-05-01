@@ -11,7 +11,7 @@ var bird, slingshot;
 var gameState = "onSling";
 
 function preload() {
-    backgroundImg = loadImage("sprite/bg.png")
+    backgroundImg = loadImage("sprites/bg.png")
     getBackgroundImg()
 }
 
@@ -95,11 +95,12 @@ function keyPressed(){
 async function getBackgroundImg(){
     var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Tokyo")
     var responsejson = await response.json()
-    var datetime=responsejson.datetime
-    var hour =datetime.slice(11,13)
-    if(hour>=6&&hour<=19){
+    var datetime = responsejson.datetime
+    var hour = datetime.slice(11,13)
+    if( hour>=6&&hour<=19 ){
         bg="sprites/bg.png"
+    }else{
+        bg="sprites/bg2.jpg"
     }
-    else{bg="sprites/bg2.jpg"}
-    backgroundImg=loadImage(bg)
+    backgroundImg = loadImage(bg)
 }
