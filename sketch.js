@@ -11,7 +11,7 @@ var bird, slingshot;
 var gameState = "onSling";
 
 function preload() {
-    defaultImg=loadImage("sprite/bg.png")
+    backgroundImg = loadImage("sprite/bg.png")
     getBackgroundImg()
 }
 
@@ -50,7 +50,6 @@ function draw(){
    if(backgroundImg)
        background(backgroundImg)
 
-   else{background(defaultImg)}
     Engine.update(engine);
     //strokeWeight(4);
     box1.display();
